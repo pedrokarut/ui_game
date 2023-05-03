@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbvd8w4wa6u3n"]
+
+[ext_resource type="Script" path="res://enemy_atack_area.gd" id="1_lj06q"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kpdca"]
+radius = 125.064
+
+[node name="EnemyAtackArea" type="Area2D"]
+script = ExtResource("1_lj06q")
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_kpdca")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+autostart = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

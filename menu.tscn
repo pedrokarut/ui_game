@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=3 uid="uid://cd7vr14qysaa6"]
+
+[ext_resource type="FontFile" uid="uid://qm00ggpnxqbe" path="res://assets/kurland.ttf" id="1_ng42q"]
+[ext_resource type="Script" path="res://menu.gd" id="1_ruvyv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_t7q5k"]
+font = ExtResource("1_ng42q")
+font_size = 64
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 8
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(8, 8)
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ruvyv")
+
+[node name="GameName" type="Label" parent="."]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 0
+offset_left = 102.0
+offset_top = 60.0
+offset_right = 434.0
+offset_bottom = 131.0
+text = "Tiny Swords"
+label_settings = SubResource("LabelSettings_t7q5k")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 131.0
+offset_top = 220.0
+offset_right = 431.0
+offset_bottom = 520.0
+theme_override_constants/separation = 20
+
+[node name="NewGame" type="Button" parent="VBoxContainer" groups=["button"]]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_ng42q")
+theme_override_font_sizes/font_size = 32
+text = "New Game	"
+
+[node name="Quit" type="Button" parent="VBoxContainer" groups=["button"]]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_ng42q")
+theme_override_font_sizes/font_size = 32
+text = "Quit	"
