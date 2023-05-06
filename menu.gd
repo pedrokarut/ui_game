@@ -11,6 +11,8 @@ func _ready():
 func aperta(name):
 	match name:
 		"NewGame":
-			get_tree().change_scene_to_file("res://level.tscn")
+			transition.scene_path = "res://level.tscn"
+			transition.fade_in()
 		"Quit":
-			get_tree().quit()
+			transition.can_quit = true
+			transition.fade_in()
